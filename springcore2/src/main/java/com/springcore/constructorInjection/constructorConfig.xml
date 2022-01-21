@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- <bean class="com.springcore.constructorInjection.Certificate" name="cert" c:cname="MyJava Certification" /> -->
+
+	<bean class="com.springcore.constructorInjection.Certificate" name="cert" >
+		<constructor-arg value="Java Certification"/>
+	</bean>
+
+	<bean class="com.springcore.constructorInjection.Person" name="person1">
+		<constructor-arg>
+			<value>Rahul</value>			<!-- //Inserting 1st value as an TAG -->
+		</constructor-arg>
+		
+		<constructor-arg value="105" />		<!-- //Inserting 2nd value as an Attribute -->
+		<constructor-arg ref="cert" />		<!-- //Inserting 3rd REF value as an Attribute -->
+		
+		
+		<!-- 	<constructor-arg value="105" type="int" />	 -->	<!-- //Passing 2nd argument in that constructor having 2nd parameter as INT.  -->
+																	<!-- // It can possible in class having multiple overloaded constructors. -->
+	</bean>
+	
+	
+	<bean class= "com.springcore.constructorInjection.Addition" name="add">
+		<constructor-arg value="12" type="int" />			<!-- // Since you know that we had two overloaded constructors (double,double) & (int,int) 	-->
+		<constructor-arg value="34" type="int" />			<!-- // And here Spring ne Addition class me wo byDefault priorty dega (String,String) type const ko, warna String wala nhi hua to jo sabse upar wala const type hoga usko call kar leta hai 	-->
+															<!-- // But anyways, we can also specifically mention type="int"	--> 
+		
+		<!-- <constructor-arg value="12" type="int" index="1" />			// We can also specifically change the constructor parameters orders 
+			<constructor-arg value="32" type="int" index="0" /> -->
+		
+
+	</bean>
+</beans>	
+
+
+
+
+
