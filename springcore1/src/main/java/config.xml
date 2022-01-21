@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+  	<!-- this is our 1st BEAN (spring created object, named "student1") -->
+ 	<bean class="com.springcore.Student" name="student1">
+	
+		<!-- Inserting value as an TAG -->
+				<property name="studentId">
+					<value>101</value>
+				</property>
+			
+				<property name="studentName">
+					<value>Rahul</value>
+				</property>
+	
+		<!-- Inserting value as an Attribute  -->	
+				<property name="studentAddress" value = "Delhi" />
+	</bean>
+
+
+	<!-- this is our 2nd BEAN (spring created object, named "student2") -->
+ 	<bean class="com.springcore.Student" name="student2">
+	
+		<!-- Inserting value as an Attribute  -->	
+				<property name="studentId" value = "102" />
+				<property name="studentName" value = "Sneha" />
+				<property name="studentAddress" value = "Patna" />
+	</bean>
+  	
+  	
+  	<!-- this is our 3rd BEAN ("student3" Bean created using P Schema) -->
+ 	<bean class="com.springcore.Student" name="student3" p:studentId="103" p:studentName="Shubham" p:studentAddress="Ranchi" />
+	
+
+</beans>
+
+
+
+
+
