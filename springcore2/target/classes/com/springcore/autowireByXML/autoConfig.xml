@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.springcore.autowireByXML.Address" name="address">
+		<property name="street" value="TempStreet"/>
+		<property name="city" value="Patna" />
+	</bean>
+	
+	<bean class="com.springcore.autowireByXML.Emp" name="emp1" autowire="byName" /> 
+		<!-- Jisse hoga ye ki Spring container Emp class ka jab bhi object banayega, tab wo Emp class me check karega ki Emp class ke liye hame ek "Address" ka object chaiye  , jiske variable ka naam aapne liya hai address {Emp claas me}  
+			Fir wo config file check karega ki "address" name se koi bean hai kya ;  agar mil gya to uss "Address" class ka obj ko banake Emp class me simply inject kar dega.
+		-->
+		
+<!--  <bean class="com.springcore.autowireByXML.Emp" name="emp1" autowire="byType" /> -->
+		<!-- Jisse hoga ye ki Spring container Emp class ka jab bhi object banayega, tab wo Emp class me check karega ki Emp class ke liye hame ek "Address" ka object chaiye , jiske variable ka TYPE hai Address {Emp claas me}  
+			Fir wo config file check karega ki "Address" TYPE se koi bean hai kya ;  agar mil gya to uss "Address" class ka obj ko banake Emp class me simply inject kar dega.
+		-->
+		
+
+<!--  <bean class="com.springcore.autowireByXML.Emp" name="emp1" autowire="constructor" /> -->
+	
+		
+		
+</beans>
