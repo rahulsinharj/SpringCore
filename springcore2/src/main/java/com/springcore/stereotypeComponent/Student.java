@@ -3,11 +3,13 @@ package com.springcore.stereotypeComponent;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 // @Component		kewal ye bhi likh skte hai, Yana pe if we don't write "stu1" then byDefault camelCase "student" naam se obj se bana dega; 
 
-@Component("stu1")			//	These are Stereotype annotation ; @Component tag ke karan com.springcore.stereotypeComponent pkg ke andar jis class ke andar ye tag milega uska obj create karega on runtime
+@Component("stu")				//	This annotation is just equivalent to declaring BEAN in config file ; @Component tag ke karan com.springcore.stereotypeComponent pkg ke andar jis class ke andar ye tag milega uska obj create karega on runtime
+@Scope("prototype")				// 	By default we have scope as "singleton" {i.e, providing same obj everytime for a new obj call} ; now if we want to change the scope to "prototype" => that is to get everytime a new obj whenever call for a new obj.
 public class Student {
 
 	

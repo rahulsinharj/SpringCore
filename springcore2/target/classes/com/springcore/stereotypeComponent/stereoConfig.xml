@@ -24,6 +24,11 @@
 	<!-- "stereotypeComponent" pkg ke andar sare Class aur subPkg ko scan karega, unme @Component tag ko dhundega ; aur yaha hmko <bean> nhi lagana padega -->
 	
 	
+	
+	<bean class="com.springcore.stereotypeComponent.Teacher" name="teacher" scope="prototype"/>
+	
+	
+	
 </beans>	
 
 
