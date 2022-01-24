@@ -27,6 +27,13 @@
 			<artifactId>spring-context</artifactId>
 			<version>5.2.18.RELEASE</version>
 		</dependency>
+		
+		<!-- below javax annotation -  for using @PostConstruct , @PreDestroy is deprecated after java9 , that's why we are putting it specifically -->
+		<dependency>											
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.3.2</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

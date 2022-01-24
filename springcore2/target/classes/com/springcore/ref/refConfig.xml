@@ -17,6 +17,7 @@
 
 	<bean class="com.springcore.ref.A" name="aRef">
 		<property name="x" value="15" />
+		
 		<property name="obj" ref="bRef" />
 
    <!--	<property name="obj">
