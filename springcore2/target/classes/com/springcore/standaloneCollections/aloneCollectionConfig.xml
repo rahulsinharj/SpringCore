@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- You can compare CONFIG file of /springcore2/src/main/java/com/springcore/collections/collectionConfig.xml -->
+
+    <!-- We will create StandAlone list by using Util Schema ; inspite of creating local LIST  -->
+	
+	<util:list list-class="java.util.Vector" id="friendList" >
+		<value>Rahul</value>
+		<value>Vikash</value>
+		<value>Shubham</value>
+	</util:list>
+	
+	<!-- StandAlone MAP -->
+	<util:map map-class="java.util.HashMap" id="feeList">
+		<entry key="Spring" value="8000" />
+		<entry key="Django" value="5000" />
+		<entry key="Hibernate" value="2000" />
+	</util:map>
+	
+	<!-- StandAlone PROPERTIES -->
+	<util:properties id="prop1">
+		<prop key="username">Rahul</prop>
+		<prop key="password">Rahul123</prop>
+		<prop key="database">SQL</prop>
+	</util:properties>
+	
+	
+  	<bean class="com.springcore.standaloneCollections.Person" name="person1">
+  
+  		<property name="friends" ref="friendList" />
+  		<property name="feeStructure" ref="feeList" />
+  		<property name="myproperties" ref="prop1" />
+  		
+  		
+  	<!-- <property name="friends" >
+  			<ref bean="friendList" />
+  		</property> -->
+  
+  	</bean>
+
+</beans>

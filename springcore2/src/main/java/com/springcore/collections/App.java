@@ -19,6 +19,9 @@ public class App
 //		System.out.println(e1.getAddress());
 //		System.out.println(e1.getCourses());
 		
+		System.out.println("Phone : "+e1.getPhones().getClass().getName());
+		System.out.println("Address : "+e1.getAddress().getClass().getName());
+		System.out.println("Courses : "+e1.getCourses().getClass().getName());
 	
     }
 }

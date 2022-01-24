@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- We will create StandAlone list by using Util Schema ; inspite of creating local LIST  -->
+	
+	<util:list list-class="java.util.LinkedList" id="cityList" >
+		<value>Delhi</value>
+		<value>Patna</value>
+		<value>Noida</value>
+	</util:list>
+	
+	
+	<context:component-scan base-package="com.springcore.stereotypeComponent"  />
+	<!-- "stereotypeComponent" pkg ke andar sare Class aur subPkg ko scan karega, unme @Component tag ko dhundega ; aur yaha hmko <bean> nhi lagana padega -->
+	
+	
+</beans>	
+
+
+
+
+
