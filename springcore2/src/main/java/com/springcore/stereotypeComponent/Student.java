@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 // @Component		kewal ye bhi likh skte hai, Yana pe if we don't write "stu1" then byDefault camelCase "student" naam se obj se bana dega; 
 
 @Component("stu")				//	This annotation is just equivalent to declaring BEAN in config file ; @Component tag ke karan com.springcore.stereotypeComponent pkg ke andar jis class ke andar ye tag milega uska obj create karega on runtime
-@Scope("prototype")				// 	By default we have scope as "singleton" {i.e, providing same obj everytime for a new obj call} ; now if we want to change the scope to "prototype" => that is to get everytime a new obj whenever call for a new obj.
+@Scope("prototype")				// 	By default we have scope as "singleton" {i.e, providing same obj everytime for a new obj call} ; now if we want to get everytime a new obj whenever call for a new obj => just change the scope to "prototype" => that's it
 public class Student {
 
 	
@@ -19,7 +19,7 @@ public class Student {
 	@Value("Patna")
 	private String city;
 	
-	@Value("#{cityList}")				// "cityList" ko springcontainer config file se dhund lega, wo sari values ko list me convert karke , uska obj banake "address" reference me daal dega. 
+	@Value("#{cityList}")				// #{cityList} ko SpringContainer config file se dhund lega, wo sari values ko list me convert karke , uska obj banake "address" reference me daal dega. Basically this is Spring Expression Language @value("#{ }")
 	private List<String> address;
 
 	public String getStudentName() {
