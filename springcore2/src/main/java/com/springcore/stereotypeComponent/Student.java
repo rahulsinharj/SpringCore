@@ -51,5 +51,4 @@ public class Student {
 		return "Student [studentName=" + studentName + ", city=" + city + ", address=" + address + "]";
 	}
 	
-	
 }
