@@ -7,7 +7,11 @@ import org.springframework.stereotype.Component;
 public class Main {
 
 	public static void main(String[] args) {
-		
+
+/* 	Exception in thread "main" org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'firstStudent' available
+ * 	Ye aisa error tab aayega jab aap config.xml file me <context:component-scan base-package="com.springcore.javaConfig" /> ye nhi likhe hoge.
+ */		
+	
 		ApplicationContext con = new ClassPathXmlApplicationContext("com/springcore/stereotypeComponent/stereoConfig.xml");
 		
 		Student s1 = (Student) con.getBean("stu");		// getting obj of "Student class" from IOC-container , since we had put @Component("stu") in that "Student class".
