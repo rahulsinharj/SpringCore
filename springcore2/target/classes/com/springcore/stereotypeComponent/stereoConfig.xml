@@ -11,20 +11,20 @@
     http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <!-- // We will create StandAlone list by using Util Schema ; inspite of creating local LIST  -->
+
+	<context:component-scan base-package="com.springcore.stereotypeComponent"  />
+		<!-- // "stereotypeComponent" pkg ke andar sare Class aur subPkg ko scan karega, unme @Component tag ko dhundega ; aur yaha hmko <bean> nhi lagana padega -->
+	
+	
+    	<!-- // We will create StandAlone list by using Util Schema ; inspite of creating local LIST  -->
 	
 	<util:list list-class="java.util.LinkedList" id="cityList" >
 		<value>Delhi</value>
 		<value>Patna</value>
 		<value>Noida</value>
 	</util:list>
-	
-	
-	<context:component-scan base-package="com.springcore.stereotypeComponent"  />
-		<!-- // "stereotypeComponent" pkg ke andar sare Class aur subPkg ko scan karega, unme @Component tag ko dhundega ; aur yaha hmko <bean> nhi lagana padega -->
-	
-	
-	
+		
+		
 	<bean class="com.springcore.stereotypeComponent.Teacher" name="teacher" scope="prototype"/>
 		<!-- // By default we have scope as "singleton" {i.e, providing same obj everytime for a new obj call} ; now if we want to get everytime a new obj whenever call for a new obj => just change the scope to "prototype" => that's it -->
 	

@@ -19,8 +19,10 @@ public class Student {
 	@Value("Patna")
 	private String city;
 	
-	@Value("#{cityList}")				// #{cityList} ko SpringContainer config file se dhund lega, wo sari values ko list me convert karke , uska obj banake "address" reference me daal dega. Basically this is Spring Expression Language @value("#{ }")
-	private List<String> address;
+										// Basically this #{expression} is Spring Expression Language which accepts- classes, variables, methods, constructors, objects, and symbols - like char, numerics, operators, keywords, special symbols which return a value.
+										// Injecting "standalone" collection from config.xml file -> into @Value("#{ }") SP Exp Lang 
+	@Value("#{cityList}")				// #{cityList} ko SpringContainer config file se dhund lega, wo sari values ko list me convert karke , uska obj banake "address" reference me daal dega through @value("#{ }") 
+	private List<String> address;		
 
 	public String getStudentName() {
 		return studentName;

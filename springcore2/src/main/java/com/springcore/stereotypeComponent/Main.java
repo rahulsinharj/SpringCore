@@ -2,6 +2,7 @@ package com.springcore.stereotypeComponent;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 public class Main {
 
@@ -9,7 +10,7 @@ public class Main {
 		
 		ApplicationContext con = new ClassPathXmlApplicationContext("com/springcore/stereotypeComponent/stereoConfig.xml");
 		
-		Student s1 = (Student) con.getBean("stu");
+		Student s1 = (Student) con.getBean("stu");		// getting obj of "Student class" from IOC-container , since we had put @Component("stu") in that "Student class".
 		System.out.println(s1);
 		System.out.println(s1.getAddress());
 		System.out.println(s1.getAddress().getClass().getName());
