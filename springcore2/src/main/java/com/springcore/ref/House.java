@@ -1,39 +1,36 @@
 package com.springcore.ref;
 
-public class A {
+public class House {
 	
-	private int x ;
-	private B obj;
+	private int door ;
+	private Chair chair;
 	
-	public A() {
+	public House() {
 		super();
 	}
-
-	public A(int x, B obj) {
+	public House(int door, Chair chair) {
 		super();
-		this.x = x;
-		this.obj = obj;
+		this.door = door;
+		this.chair = chair;
 	}
-
-	public int getX() {
-		return x;
+	public int getDoor() {
+		return door;
 	}
-
-	public void setX(int x) {
-		this.x = x;
+	public void setDoor(int door) {
+		this.door = door;
 	}
-
-	public B getObj() {
-		return obj;
+	public Chair getChair() {
+		return chair;
 	}
-
-	public void setObj(B obj) {
-		this.obj = obj;
+	public void setChair(Chair chair) {
+		this.chair = chair;
 	}
-
 	@Override
 	public String toString() {
-		return "A [x=" + x + ", obj=" + obj + "]";
+		return "House [door=" + door + ", chair=" + chair + "]";
 	}
+	
+	
+	
 	
 }

@@ -1,29 +1,32 @@
 package com.springcore.ref;
 
-public class B {
+public class Chair {
 
-	private int y;
+	private int balls;
 
-	public B() {
+	public Chair() {
 		super();
 	}
 
-	public B(int y) {
+	public Chair(int balls) {
 		super();
-		this.y = y;
+		this.balls = balls;
 	}
 
-	public int getY() {
-		return y;
+	public int getBalls() {
+		return balls;
 	}
 
-	public void setY(int y) {
-		this.y = y;
+	public void setBalls(int balls) {
+		this.balls = balls;
 	}
 
 	@Override
 	public String toString() {
-		return "B [y=" + y + "]";
+		return "Chair [balls=" + balls + "]";
 	}
+
+	
+
 	
 }

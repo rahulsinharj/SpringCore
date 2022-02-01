@@ -9,20 +9,20 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- this is our 1st BEAN (spring created object, named "student1") -->
-	<bean class="com.springcore.ref.B" name="bRef">
-		<property name="y" value="90" />
+	<bean class="com.springcore.ref.Chair" name="mychair">
+		<property name="balls" value="12" />
 	</bean>
 
-	<!-- <bean class="com.springcore.ref.A" name="aRef" p:x="20" p:obj-ref="bRef" /> -->
+	<!-- <bean class="com.springcore.ref.House" name="houseRef" p:door="5" p:chair-ref="mychair" /> -->
 
-	<bean class="com.springcore.ref.A" name="aRef">
-		<property name="x" value="15" />
+	<bean class="com.springcore.ref.House" name="houseRef">
+		<property name="door" value="5" />
 		
-		<property name="obj" ref="bRef" />
+		<property name="chair" ref="mychair" />
 
-   <!--	<property name="obj">
-			<ref bean="bRef" />
-		</property> -->
+   		<!-- <property name="chair">
+				<ref bean="mychair" />
+			 </property> -->
 
 	</bean>
 

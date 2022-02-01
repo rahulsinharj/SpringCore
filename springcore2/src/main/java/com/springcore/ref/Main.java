@@ -9,12 +9,12 @@ public class Main {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/springcore/ref/refConfig.xml");
 
-		A a1 = (A) context.getBean("aRef");
-		System.out.println(a1);
+		House h1 = (House) context.getBean("houseRef");
+		System.out.println(h1);
 		
-		System.out.println(a1.getX());
-		System.out.println(a1.getObj());
-		System.out.println(a1.getObj().getY());
+		System.out.println(h1.getDoor());
+		System.out.println(h1.getChair());
+		System.out.println(h1.getChair().getBalls());
 		
 		
 		
