@@ -1,6 +1,7 @@
 package com.springJdbc.dao;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 import com.springJdbc.entites.Student;
 
@@ -37,7 +38,26 @@ public class StudentDaoImpl implements StudentDao{
 		System.out.println("Records deleted : " +result);
 		return result;
 	}
+
+	/* SELECT query Operation : 
+			public T queryForObject( String sqlQuery , RowMapper<T> rowMapper , Object args )
+			public List<T> query( String sqlQuery , RowMapper<T> rowMapper )
+			
+		# [Here doing Obj Relational Mapping ] => Row mapper converts "ResultSet obj" to "Entity Class object" (like to - Student class obj)	
+			Row uthayega -> entity class ka obj dega
+	*/
 	
+	public Student getStudent(int studentId) 
+	{
+		// Selecting single student data
+		String query = "select * from student where id=?";
+		
+		RowMapper<Student> rowMapper = new RowMapperImpl();
+		Student student = this.jdbcTemplate.queryForObject(query, rowMapper  , studentId);
+		
+		return student;
+		
+	}   
 	
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;
@@ -52,8 +72,8 @@ public class StudentDaoImpl implements StudentDao{
 		return "StudentDaoImpl [jdbcTemplate=" + jdbcTemplate + "]";
 	}
 
+
+
 	
-
-
 
 }

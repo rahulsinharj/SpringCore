@@ -27,22 +27,27 @@ public class App
         
         StudentDao sdao = (StudentDao) context.getBean("studentDaoImpl");
         
-        //INSERT Operation
+        // INSERT Operation
 //        Student s1 = new Student();
 //        s1.setId(108);					// We should take these student values from user through a html form kind of thing, not like this as hardCoded value.
 //        s1.setName("Pramod Kumar"); 
 //        s1.setCity("Punjab");
 //        sdao.insert(s1);        
     	
-    	//UPDATE Operation
+    	// UPDATE Operation
 //    	Student s2 = new Student();
 //    	s2.setId(104);
 //    	s2.setName("Varun Sinha");
 //    	s2.setCity("Noida");
 //    	sdao.change(s2);
     	
-    	//DELETE Operation
+    	// DELETE Operation
 //        sdao.delete(108);
+        
+        // SELECT query Operation
+        Student s3 = sdao.getStudent(105);
+        System.out.println(s3);
+                
         
     } 
 } 

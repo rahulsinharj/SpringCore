@@ -26,5 +26,6 @@
 	<bean class="com.springJdbc.dao.StudentDaoImpl" name="studentDaoImpl" >
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>	
+
 		
 </beans>
