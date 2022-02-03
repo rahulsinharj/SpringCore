@@ -2,6 +2,7 @@ package com.springJdbc;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -33,7 +34,7 @@ public class JdbcConfig {
 		return jdbcTemplate;
 	}
 
-// # Inspite of doing below things, we can also do it by - adding here @ComponentScan(basePackages = "{ }") , and making StudentDaoImpl class as @Component 
+// # Inspite of doing below things, we can also do it by - adding here @ComponentScan(basePackages = "{ }") , and making StudentDaoImpl class as @Component , and making StudentDaoImpl's class instance property "jdbcTemplate" as @Autowired	
 	
 //	@Bean("studentDaoImpl")
 //	public StudentDao getStudentDao()
