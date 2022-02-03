@@ -17,5 +17,6 @@ public class Main {
 		Student s3 = (Student) context.getBean("student3");
 		System.out.println(s3);
 
+		
 	}
 }
