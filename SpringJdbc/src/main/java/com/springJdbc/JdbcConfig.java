@@ -33,7 +33,7 @@ public class JdbcConfig {
 		return jdbcTemplate;
 	}
 
-// # Inspite of doing below things, we can also do it by - adding here @ComponentScan(basePackages = "{ }") , and making StudentDaoImpl class as @Component , and making StudentDaoImpl's class instance property "jdbcTemplate" as @Autowired	
+// # Inspite of doing below things, we can also do it by - adding here @ComponentScan(basePackages = {" "}) , and making StudentDaoImpl class as @Component , and making StudentDaoImpl's class instance property "jdbcTemplate" as @Autowired	
 	
 //	@Bean("studentDaoImpl")
 //	public StudentDao getStudentDao()
