@@ -12,8 +12,8 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 @ComponentScan(basePackages = {"com.springJdbc"})
 public class JdbcConfig {
 
-	@Bean("ds")
-	public DataSource getDataSource()
+	@Bean("ds")							// here even @Bean will work fine, and mentioning @Bean("ds") is not required at all, because by our own we won't call this DataSource obj by "ds" name. Its just that this obj is required by JdbcTemplate obj instantiation
+ 	public DataSource getDataSource()
 	{
 		DriverManagerDataSource ds = new DriverManagerDataSource();
 		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -24,7 +24,7 @@ public class JdbcConfig {
 		
 	}
 
-	@Bean("jdbcTemplate")
+	@Bean("jdbcTemplate")				// here even @Bean will work fine, and mentioning @Bean("jdbcTemplate") is not required at all, because by our own we won't call this JdbcTemplate obj by "jdbcTemplate" name. Its just that this obj is required by StudentDaoImpl obj instantiation
 	public JdbcTemplate getTemplate()
 	{
 		JdbcTemplate jdbcTemplate = new JdbcTemplate();
