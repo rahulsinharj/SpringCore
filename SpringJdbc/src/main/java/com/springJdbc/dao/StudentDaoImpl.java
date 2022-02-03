@@ -1,5 +1,7 @@
 package com.springJdbc.dao;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -12,8 +14,8 @@ public class StudentDaoImpl implements StudentDao{
 	public int insert(Student student) 
 	{	
 		// insert query
-		String query = "insert into student(id,name,city) values(?,?,?) "; 
-		int result = this.jdbcTemplate.update(query , student.getId(), student.getName(), student.getCity());
+		String myquery = "insert into student(id,name,city) values(?,?,?) "; 
+		int result = this.jdbcTemplate.update(myquery , student.getId(), student.getName(), student.getCity());
 
 		System.out.println("Records inserted : " +result);
 		return result;
@@ -22,8 +24,8 @@ public class StudentDaoImpl implements StudentDao{
 	public int change(Student student) 
 	{
 		// updating data
-		String query = "update student set name=? , city=? where id=? ";
-		int result = this.jdbcTemplate.update(query, student.getName(), student.getCity(), student.getId());
+		String myquery = "update student set name=? , city=? where id=? ";
+		int result = this.jdbcTemplate.update(myquery, student.getName(), student.getCity(), student.getId());
 		
 		System.out.println("Records updated : " +result);
 		return result;
@@ -32,8 +34,8 @@ public class StudentDaoImpl implements StudentDao{
 	public int delete(int studentId) 
 	{
 		// delete operation
-		String query = "delete from student where id=?";
-		int result = this.jdbcTemplate.update(query, studentId);
+		String myquery = "delete from student where id=?";
+		int result = this.jdbcTemplate.update(myquery, studentId);
 	
 		System.out.println("Records deleted : " +result);
 		return result;
@@ -50,14 +52,25 @@ public class StudentDaoImpl implements StudentDao{
 	public Student getStudent(int studentId) 
 	{
 		// Selecting single student data
-		String query = "select * from student where id=?";
+		String myquery = "select * from student where id=?";
 		
-		RowMapper<Student> rowMapper = new RowMapperImpl();
-		Student student = this.jdbcTemplate.queryForObject(query, rowMapper  , studentId);
+		RowMapper<Student> rowMapper = new RowMapperImpl();									// Here direclty we won't create obj of RowMapper , inspite we will use obj of its implementation class.
+		Student student = this.jdbcTemplate.queryForObject(myquery, rowMapper  , studentId);	// calling RowMapper's queryForObject() method
 		
 		return student;
-		
 	}   
+	
+	public List<Student> getAllStudents() 
+	{
+		// Selecting multiple students
+		String myquery = "select * from student";
+		List<Student> students = this.jdbcTemplate.query(myquery, new RowMapperImpl());  // here if want to put some parameter into myquery then we we can put them from our 3rd paramters as well.
+		
+		return students;
+	}
+	
+	
+	
 	
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;
@@ -72,8 +85,7 @@ public class StudentDaoImpl implements StudentDao{
 		return "StudentDaoImpl [jdbcTemplate=" + jdbcTemplate + "]";
 	}
 
-
-
+	
 	
 
 }
