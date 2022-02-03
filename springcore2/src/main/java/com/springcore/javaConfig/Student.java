@@ -1,16 +1,23 @@
 package com.springcore.javaConfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("firstStudent")
 public class Student {
 
-										// kyuki Pencil class me @Component hai, to IOC uska obj bana dega ; aur iss @Autowired annotation ke karan uss Pencil class ka Bean obj iss "pencil" ke ref me khud hi autowire kar dega/ matlab automatically daal dega.
+	@Value("RahulSinha")
+	private String studentName;
+	
+	@Value("105")
+	private int rollNo;
+	
+	@Autowired									// kyuki Pencil class me @Component hai, to IOC uska obj bana dega ; aur iss @Autowired annotation ke karan uss Pencil class ka Bean obj iss "pencil" ke ref me khud hi autowire kar dega/ matlab automatically daal dega.
 	private Pencil pencil;
 	
 	
-	@Autowired							// yaha pe Student ke constructor pe @AutoWired karne ke jagah , direct "pencil" ke instance obj par bhi @Autowired kar sakte the.
+	//@Autowired							// yaha pe direct "pencil" ke instance obj par @Autowired karke ke jagah , constructor pe hi @AutoWired kar sakte the.
 	public Student(Pencil pencil) 
 	{
 		super();
@@ -27,5 +34,10 @@ public class Student {
 		System.out.println("Student is studying book");
 		
 		this.pencil.showPencil();
+	}
+
+	@Override
+	public String toString() {
+		return "Student [studentName= " + studentName + ", rollNo= " + rollNo + ", pencil= " + pencil + "]";
 	}
 }

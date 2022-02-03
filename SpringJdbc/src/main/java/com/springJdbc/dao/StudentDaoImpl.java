@@ -2,14 +2,19 @@ package com.springJdbc.dao;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import com.springJdbc.entites.Student;
 
+@Component										// @Component("studentDaoImpl")  // We can write this as well
 public class StudentDaoImpl implements StudentDao{
-
-	private JdbcTemplate jdbcTemplate;			// this.jdbcTemplate.update() tab chalega -> jab iss jdbcTemplate ref me obj initialise hoga, joki tab hoga jab iss pure StudentDaoImpl class ka obj banke uske properties initialise kare IOC 
+													
+												// iss autowired ke karan Spring container ke paas iss jdbcTemplate reference ki jobhi dependency Obj hoga -> usko isme inject kar dega. 
+	@Autowired									// Aur kyuki hame khudse JdbcTemplate ka koi class nhi banaya hai, naahi uss class ko banake usko @Component kara hai, taaki uska obj SpringContainer khud bana le, aur naahi uss class me @Value("") lagake uske properties ko initialize kiya hai, for its obj instantiation. That's why we need @BEAN as its alternative.
+	private JdbcTemplate jdbcTemplate;			// this.jdbcTemplate.update() tab chalega -> jab iss jdbcTemplate ref me obj initialise hoga, joki tab hoga jab iss pure StudentDaoImpl class ka obj banke uske properties initialise karega SpringContainer 
 	
 	public int insert(Student student) 
 	{	

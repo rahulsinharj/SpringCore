@@ -13,7 +13,7 @@ public class Main {
 		
 		Student stu = (Student) context.getBean("firstStudent");		// getting bean obj through @ComponentScan and @Component { @ComponentScan must be in @Configuration annotated MyConfig class } and using @Autowired annotations
 		stu.study();
-		
+		System.out.println(stu);
 		
 		Teacher t = (Teacher) context.getBean("teacher1");			// getting bean obj through @Bean annotation in @Configuration annotated MyConfig class
 		t.teach();
