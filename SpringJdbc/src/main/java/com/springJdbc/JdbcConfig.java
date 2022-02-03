@@ -33,7 +33,7 @@ public class JdbcConfig {
 		return jdbcTemplate;
 	}
 
-// # Inspite of doing below things, we can also do it by - making StudentDaoImpl class as @Component , and adding @ComponentScan(basePackages = "{ }") 
+// # Inspite of doing below things, we can also do it by - adding here @ComponentScan(basePackages = "{ }") , and making StudentDaoImpl class as @Component 
 	
 //	@Bean("studentDaoImpl")
 //	public StudentDao getStudentDao()
