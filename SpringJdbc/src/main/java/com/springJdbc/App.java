@@ -32,11 +32,11 @@ public class App
         StudentDao sdao = (StudentDao) context.getBean("studentDaoImpl");
         
         // INSERT Operation ::
-//        Student s1 = new Student();
-//        s1.setId(109);					// We should take these student values from user through a html form kind of thing, not like this as hardCoded value.
-//        s1.setName("Mukul Singh"); 
-//        s1.setCity("Govindpura");
-//        sdao.insert(s1);        
+        Student s1 = new Student();
+        s1.setId(119);					// We should take these student values from user through a html form kind of thing, not like this as hardCoded value.
+        s1.setName("Mukul SS"); 
+        s1.setCity("Govindpura");
+        sdao.insert(s1);        
     	
     	// UPDATE Operation ::
 //    	Student s2 = new Student();
@@ -48,11 +48,11 @@ public class App
     	// DELETE Operation ::
 //        sdao.delete(108);
         
-        // SELECT query Operation ::
+        // SELECT 1 entity - query Operation ::
 //        Student s3 = sdao.getStudent(105);
 //        System.out.println(s3);
                 
-        // SELECTING all students ::
+        // SELECTING all students entity  ::
         List<Student> allStudents = sdao.getAllStudents();
         for(Student st : allStudents)
         	System.out.println(st);
