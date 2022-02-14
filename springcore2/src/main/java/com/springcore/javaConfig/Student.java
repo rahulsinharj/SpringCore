@@ -13,7 +13,7 @@ public class Student {
 	@Value("105")
 	private int rollNo;
 	
-	@Autowired									// kyuki Pencil class me @Component hai, to IOC uska obj bana dega ; aur iss @Autowired annotation ke karan uss Pencil class ka Bean obj iss "pencil" ke ref me khud hi autowire kar dega/ matlab automatically daal dega.
+	@Autowired								// kyuki Pencil class me @Component hai, to IOC uska obj bana dega ; aur iss @Autowired annotation ke karan uss Pencil class ka Bean obj iss "pencil" ke ref me khud hi autowire kar dega/ matlab automatically daal dega.
 	private Pencil pencil;
 	
 	

@@ -5,7 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 
-@Configuration													// @Configuration - se ye bata rahe hai ki ye class Java ki sari configurations handle kar rahi hai , whether it is BEAN-configuration, Component-Scan configuration 
+@Configuration													// @Configuration - se ye bata rahe hai that this CLASS will be treated as EQUILAVENT to "CONFIG.XML" file -> and ye class Java ki sari configurations handle kar rahi hai , whether it is BEAN-configuration, Component-Scan configuration 
 @ComponentScan(basePackages = "com.springcore.javaConfig")		// @ComponentScan - takes the Base packages to scan for annotated components ; that means in which pkg to scan for the @Component annotations - for creating bean for those pkg classes.
 public class MyConfig {
 
