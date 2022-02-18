@@ -56,6 +56,7 @@
 	</bean>
 
 
+	<!-- // isse hamara DB me TRANSACTION actuall me Enable hoga , aur upar top me "tx:annotation-driven" tag bhi lagana hoga  -->
 	<bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" name="transactionManager">
 		<property name="sessionFactory" ref="factory" />	
 	</bean>
