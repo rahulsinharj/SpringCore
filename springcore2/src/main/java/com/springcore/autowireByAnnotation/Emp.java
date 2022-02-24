@@ -11,6 +11,8 @@ public class Emp {
 	@Qualifier("address2")			// Qualifer isliye lagaye hai because @Autowired ke karan SpringContainer config file me "Address" ByTYPE ka bean dhundega, agar same Address type ka multiple beans milega to confusion error aajayega.  
 	private Address address;		// 		Jisko resolve karne ke liye Qualifier annotation lagaya hai {"address2" bean name ka}. "address2" wala bean ka obj aajayega Emp ke Address reference me.
 
+	// AUTOWIRING don't requires Setters/ or Constructor methods for dependency injection => to check this you can try removing below setters and constructors.
+	
 	public Emp() {
 		super();
 	}
