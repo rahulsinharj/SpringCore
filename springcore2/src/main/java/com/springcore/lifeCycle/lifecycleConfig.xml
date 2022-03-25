@@ -9,10 +9,10 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- Book class ke @PostConstruct , @PreDestroy Annotations enable karne ke liye hame "context-annotation" TAG ko enable karna padega , jisse ki project me use kiye hue sare annotation enable ho jayege -->
+	<!-- Book class ke @PostConstruct , @PreDestroy Annotations enable karne ke liye hame "context:annotation-config" TAG ko enable karna padega , jisse ki project me use kiye hue sare annotation enable ho jayege -->
 	<context:annotation-config />
 	
-	<!-- Creating below bean will be use when we only have to enable @PostConstruct , @PreDestroy Annotations  -->
+	<!-- Creating below bean will be use when we only have to enable @PostConstruct , @PreDestroy Annotations ; taaki hame "context:annotation-config" ke enable na karna pade, jise sare hi annotations befijuul enable ho jate the  -->
 	<!-- <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" /> -->
 
 	<bean class="com.springcore.lifeCycle.Samosa" name="samosa1" init-method= "init" destroy-method= "destroy" >
