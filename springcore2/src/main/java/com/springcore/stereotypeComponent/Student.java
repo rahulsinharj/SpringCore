@@ -11,7 +11,12 @@ import org.springframework.stereotype.Component;
 @Component("stu")				//	This annotation is just equivalent to declaring BEAN in config file ; @Component tag ke karan com.springcore.stereotypeComponent pkg ke andar jis class ke andar ye tag milega uska obj create karega on runtime
 @Scope("prototype")				// 	By default we have scope as "singleton" {i.e, providing same obj everytime for a new obj call} ; now if we want to get everytime a new obj whenever call for a new obj => just change the scope to "prototype" => that's it
 public class Student {
-
+	
+/*	Both should be inside @Component annotated class.
+  
+  	// Singleton: Only one instance will be created for a single bean definition per Spring IoC container and the same object will be shared for each request made for that bean. Aur iss "singleton" scope ke karan obj zarur banega hi, agar hmne obj bean call nhi bhi kiya ho to bhi (context.getbean karke).
+	// Prototype: A new instance will be created for a single bean definition every time a request is made for that bean.  Aur iss "prototype" scope ke karan obj ab obj banega jab hum obj ko call karege (context.getbean karke), agar nhi call karege to obj bhi nhi banega.
+*/
 	
 	@Value("RahulSinha")			// These are Stereotype annotation
 	private String studentName;

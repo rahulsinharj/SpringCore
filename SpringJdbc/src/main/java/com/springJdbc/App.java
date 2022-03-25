@@ -36,7 +36,7 @@ public class App
         s1.setId(119);					// We should take these student values from user through a html form kind of thing, not like this as hardCoded value.
         s1.setName("Mukul SS"); 
         s1.setCity("Govindpura");
-        sdao.insert(s1);        
+//        sdao.insert(s1);        
     	
     	// UPDATE Operation ::
 //    	Student s2 = new Student();

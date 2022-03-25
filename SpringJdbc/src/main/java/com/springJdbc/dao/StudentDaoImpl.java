@@ -1,5 +1,7 @@
 package com.springJdbc.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +67,7 @@ public class StudentDaoImpl implements StudentDao{
 		return student;
 	}   
 	
-	public List<Student> getAllStudents() 
+/*	public List<Student> getAllStudents() 
 	{
 		// Selecting multiple students
 		String myquery = "select * from student";
@@ -73,8 +75,34 @@ public class StudentDaoImpl implements StudentDao{
 		
 		return students;
 	}
+*/	
+	public List<Student> getAllStudents() 
+	{
+		System.out.println("Getting all students through anonymously implementing RowMapper");
+		// Selecting multiple students
+		String myquery = "select * from student";
+		List<Student> students = this.jdbcTemplate.query(myquery, new RowMapper<Student>(){
+
+			public Student mapRow(ResultSet rs, int rowNum) throws SQLException 
+			{
+				return new Student(rs.getInt(1),rs.getString(2),rs.getString(3));
+			}
+			
+		});  // here if want to put some parameter into myquery then we we can put them from our 3rd paramters as well.
+		
+		return students;
+	}
 	
-	
+/*	public List<Student> getAllStudents() 
+	{
+		System.out.println("Getting all students through anonymously implementing RowMapper - By LAMBDA Expression");
+		// Selecting multiple students
+		String myquery = "select * from student";
+		List<Student> students = this.jdbcTemplate.query(myquery, (rs,rowNum) -> new Student(rs.getInt(1),rs.getString(2),rs.getString(3)));
+			
+		return students;
+	}
+*/	
 	
 	
 	public JdbcTemplate getJdbcTemplate() {
