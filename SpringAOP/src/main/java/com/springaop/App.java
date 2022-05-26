@@ -15,7 +15,7 @@ public class App
 
 		PaymentService paymentObj = context.getBean("payment", PaymentService.class);
 
-		paymentObj.makePayment(599);
+		paymentObj.makePayment(499);
 
 	}
 }
