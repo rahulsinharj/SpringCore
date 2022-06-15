@@ -6,11 +6,8 @@ public class PaymentServiceImpl implements PaymentService{		// We also make this
 		
 		//Payment code
 		
-		System.out.println(amount +" Amount Debited..");
+		System.out.println(amount +" Amount Payment processing..");
 		
-		// ..some code.....
-		
-		System.out.println(amount +" Amount Credited..");
 		
 	}
 
