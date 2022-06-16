@@ -9,10 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect 			// Each PointCut will have it own separate Class
 {			
-
 	// Here we have to define the pointcuts . Means logger() is that what we have to run, now we will define where we have to run.  
 	
-	@Before("execution(* com.aop.service.ShoppingCart.checkout(..))")
+	@Before("execution(* com.aop.service.ShoppingCart.checkout(..))")			// Execution defines with which particular METHODS you want to execute the POINT CUTS methods. 
 	public void beforeLogger()
 	{
 		System.out.println("Implementing 'BEFORE' Logger ASPECTS !");

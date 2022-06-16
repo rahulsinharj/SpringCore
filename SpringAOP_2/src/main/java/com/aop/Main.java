@@ -10,13 +10,13 @@ public class Main
 {
     public static void main( String[] args )
     {
-        System.out.println( "AOP Application running !" );
+//        System.out.println( "AOP Application running !" );
         
         ApplicationContext context = new AnnotationConfigApplicationContext(BeanConfig.class);
         
         ShoppingCart cart = context.getBean(ShoppingCart.class);
         cart.checkout(5);
-        
+        cart.addAddressDetails();
     
     
     }

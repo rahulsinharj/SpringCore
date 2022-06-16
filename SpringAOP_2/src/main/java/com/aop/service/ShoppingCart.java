@@ -14,8 +14,14 @@ public class ShoppingCart
 		*/
 		
 		
-		System.out.println("Checkout method from ShoppingCart called.. " +n +" items");
+		System.out.println("##--Checkout method from ShoppingCart called for " +n +" products..");
 		
 	}
 
+	public void addAddressDetails()
+	{
+		System.out.println("##--Adding address details for purchasing products..");
+	}
+	
+	
 }
